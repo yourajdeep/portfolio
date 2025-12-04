@@ -162,7 +162,7 @@ nav > div {
     position: relative;
     text-align: center;
     font-family: "Canopee";
-    font-size: 15vw;
+    font-size: 13vw;
     line-height: 80%;
     will-change: transform;
     transition: letter-spacing 0.3s;
@@ -277,7 +277,28 @@ nav > div {
         font-size: 30px;
     }
 
+    .menu-item p {
+    position: relative;
+    text-align: center;
+    font-family: "Canopee";
+    font-size: 15vw;
+    line-height: 80%;
+    will-change: transform;
+    transition: letter-spacing 0.3s;
+    }
+
     .col p {
         font-size: 1.4rem;
+    }
+
+    .sub-nav {
+    position: absolute;
+    top: 85%;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5em;
+    opacity: 0;
     }
 }
