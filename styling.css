@@ -162,7 +162,7 @@ nav > div {
     position: relative;
     text-align: center;
     font-family: "Canopee";
-    font-size: 13vw;
+    font-size: 10vw;
     line-height: 80%;
     will-change: transform;
     transition: letter-spacing 0.3s;
