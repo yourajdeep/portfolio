@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    gsap.set(".menu-item p", { y: 225 });
-    let activeItemIndicator = CSSRulePlugin.getRule(".menu-item p#active::after");
+    let activeItemIndicator = CSSRulePlugin.getRule(".menu-item p");
     const toggleButton = document.querySelector(".burger");
     let isOpen = false;
 
-    
+    gsap.set(".menu-item p", { y: 225 });
 
     const timeline = gsap.timeline({ paused: true });
 
