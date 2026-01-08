@@ -272,7 +272,6 @@ body {
   width: 350px;
   height: 350px;
   margin-bottom: 1em;
-  border: 1px solid #141412;
   border-radius: 100%;
   overflow: hidden;
 }
@@ -362,7 +361,12 @@ body {
   }
 
   .col:nth-child(1) {
-    margin-bottom: 1em;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    aspect-ratio: 1/1;
+    flex-shrink: 0;
+    min-width: 250px;
+    min-height: 250px;
   }
 
   .col:nth-child(2) {
