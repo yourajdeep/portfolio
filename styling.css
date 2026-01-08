@@ -282,7 +282,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   padding: 2em;
-  text-align: center;
+  text-align: left;
 }
 
 .col p {
@@ -369,9 +369,13 @@ body {
     min-height: 250px;
   }
 
+  .col p {
+    font-size: 1.25rem;
+  }
+
   .col:nth-child(2) {
     align-items: center;
-    text-align: center;
+    text-align: left;
   }
 }
 
