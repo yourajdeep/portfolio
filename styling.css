@@ -370,6 +370,7 @@ body {
 @media (max-width: 600px) {
   .container .info {
     flex-direction: column;
+    padding-top: 40px;
   }
 
   .col:nth-child(1) {
