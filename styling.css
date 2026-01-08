@@ -397,3 +397,25 @@ body {
 }
 
 
+
+@media (min-width: 901px) {
+  .container .info {
+    flex-direction: row;
+    justify-content: center;
+    gap: 4em;
+  }
+
+  .col:nth-child(1) {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    width: 450px;
+    height: 450px;
+  }
+
+  .col:nth-child(2) {
+    align-items: flex-start;
+    text-align: left;
+    max-width: 600px;
+    padding: 0;
+  }
+}
