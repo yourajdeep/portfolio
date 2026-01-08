@@ -350,8 +350,20 @@ body {
   }
 
   .col:nth-child(1) {
-    width: 450px;
-    height: 450px;
+    width: 400px;
+    height: 400px;
+  }
+
+  .logo a {
+    font-size: 50px;
+  }
+
+  nav .info p {
+    font-size: 1.2rem;
+  }
+
+  .burger {
+    transform: scale(1.2);
   }
 }
 
