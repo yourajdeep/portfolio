@@ -8,18 +8,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const timeline = gsap.timeline({ paused: true });
 
   timeline.to(".overlay", {
-    duration: 1.25,
+    duration: 1.35,
     clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-    ease: "power4.inOut",
+    ease: "power3.inOut",
   });
 
   timeline.to(
     ".menu-item p",
     {
-      duration: 1.25,
+      duration: 1.35,
       y: 0,
       stagger: 0.2,
-      ease: "power4.out",
+      ease: "power3.out",
     },
     "-=1"
   );
