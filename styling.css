@@ -365,6 +365,10 @@ body {
   .burger {
     transform: scale(1.2);
   }
+
+  .sub-nav p {
+    font-size: 1.75rem;
+  }
 }
 
 @media (max-width: 600px) {
