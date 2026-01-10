@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isOpen && target !== "#") {
         toggleButton.classList.remove("active");
         
-        // Speed up the exit animation (1.6x speed) - Slower/Smoother than 2x
         timeline.timeScale(1.6).reverse();
         isOpen = false;
 

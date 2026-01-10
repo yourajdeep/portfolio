@@ -83,13 +83,6 @@ section {
   margin-bottom: 10px;
 }
 
-.distort p {
-  font-weight: lighter;
-  color: #141412;
-  font-size: 16px;
-  line-height: 30px;
-}
-
 .distort img {
   width: 100%;
 }
@@ -131,6 +124,32 @@ section {
   font-size: 48px;
   font-weight: lighter;
   margin-bottom: 10px;
+}
+
+.distort h1 a {
+  text-decoration: none;
+  color: #141412;
+  position: relative;
+  cursor: pointer;
+}
+
+.distort h1 a::after {
+  content: '';
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  background-image: url('images/arrow-up-right.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  opacity: 0;
+  transform: translateY(2px) translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+.distort h1 a:hover::after {
+  opacity: 1;
+  transform: translateY(2px) translateX(0);
 }
 
 .distort p {
@@ -565,13 +584,11 @@ body {
     padding: 0;
   }
 
-  /* Desktop-only Work page image reduction */
   .distort img {
     width: 70%;
     max-width: 900px;
   }
 
-  /* Desktop-only Work page text alignment to match image */
   .distort h1,
   .distort p {
     width: 70%;

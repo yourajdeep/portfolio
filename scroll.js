@@ -1,6 +1,5 @@
 const container = document.querySelector(".container");
 const content = document.querySelector("section");
-
 const EASE = 0.12;
 let skewStrength = 0.05;
 let currentScroll = 0;
