@@ -528,12 +528,12 @@ body {
     margin-bottom: 0;
     aspect-ratio: 1/1;
     flex-shrink: 0;
-    min-width: 230px;
-    min-height: 230px;
+    min-width: 200px;
+    min-height: 200px;
   }
 
   .col p {
-    font-size: 0.92rem;
+    font-size: 0.94rem;
   }
 
   .col:nth-child(2) {
