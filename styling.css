@@ -500,11 +500,14 @@ body {
 
   .distort h1 {
     font-size: 32px;
+    padding: 0;
+    width: 90%;
   }
 
   .distort p {
     font-size: 14px;
-    padding: 0 10px;
+    padding: 0;
+    width: 90%;
   }
 
   .distort div {
