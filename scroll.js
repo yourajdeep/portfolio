@@ -21,3 +21,22 @@
                 container.scrollLeft += evt.deltaY;
             }
         }, { passive: false });
+
+        // Add touch support for mobile (Vertical Swipe -> Horizontal Scroll)
+        let touchStartY = 0;
+        
+        window.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+        }, { passive: false });
+
+        window.addEventListener('touchmove', (e) => {
+            const touchEndY = e.touches[0].clientY;
+            const deltaY = touchStartY - touchEndY; // Finger moving up = positive delta = scroll right
+            
+            container.scrollLeft += deltaY * 2; // Multiplier for sensitivity
+            touchStartY = touchEndY; // Reset for continuous delta calculation
+            
+            if (e.cancelable) {
+                e.preventDefault(); // Stop native vertical scroll
+            }
+        }, { passive: false });
