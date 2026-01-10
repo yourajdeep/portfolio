@@ -467,6 +467,9 @@ body {
 @media (min-width: 600px) and (max-width: 900px) {
   .col p {
     font-size: 2rem;
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .col:nth-child(1) {
