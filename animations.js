@@ -50,8 +50,28 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isOpen) {
       timeline.reverse();
     } else {
-      timeline.play();
+      timeline.timeScale(1).play();
     }
     isOpen = !isOpen;
+  });
+
+  document.querySelectorAll(".overlay-menu a").forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = link.getAttribute("href");
+
+      if (isOpen && target !== "#") {
+        toggleButton.classList.remove("active");
+        
+        timeline.timeScale(2).reverse();
+        isOpen = false;
+
+        setTimeout(() => {
+          window.location.href = target;
+        }, ((timeline.duration() * 1000) / 2) - 200); 
+      } else {
+        window.location.href = target;
+      }
+    });
   });
 });
