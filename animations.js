@@ -63,12 +63,13 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isOpen && target !== "#") {
         toggleButton.classList.remove("active");
         
-        timeline.timeScale(2).reverse();
+        // Speed up the exit animation (1.6x speed) - Slower/Smoother than 2x
+        timeline.timeScale(1.6).reverse();
         isOpen = false;
 
         setTimeout(() => {
           window.location.href = target;
-        }, ((timeline.duration() * 1000) / 2) - 200); 
+        }, ((timeline.duration() * 1000) / 1.6) - 300); 
       } else {
         window.location.href = target;
       }
