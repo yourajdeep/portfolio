@@ -121,7 +121,7 @@ section {
   max-width: 1000px;
   height: auto;
   object-fit: cover;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .distort h1 {
@@ -563,5 +563,18 @@ body {
     text-align: left;
     max-width: 600px;
     padding: 0;
+  }
+
+  /* Desktop-only Work page image reduction */
+  .distort img {
+    width: 70%;
+    max-width: 900px;
+  }
+
+  /* Desktop-only Work page text alignment to match image */
+  .distort h1,
+  .distort p {
+    width: 70%;
+    max-width: 900px;
   }
 }
