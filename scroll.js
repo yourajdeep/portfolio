@@ -2,20 +2,27 @@ const container = document.querySelector(".container");
 const content = document.querySelector("section");
 
 // Config
-const EASE = 0.12; // Increased slightly for snappier feel
-const SKEW_STRENGTH = 0.05; // Reduced effect (very subtle)
+const EASE = 0.12;
+let skewStrength = 0.05; // Default (desktop)
 
 // State
 let currentScroll = 0;
 let targetScroll = 0;
 let maxScroll = 0;
 
-// Initialize dimensions
-function updateMaxScroll() {
+// Initialize dimensions & physics
+function updateDimensions() {
     maxScroll = container.scrollWidth - window.innerWidth;
+    
+    // Slight increase for small screens (< 600px) as requested
+    if (window.innerWidth < 600) {
+        skewStrength = 0.07; 
+    } else {
+        skewStrength = 0.05;
+    }
 }
-window.addEventListener('resize', updateMaxScroll);
-updateMaxScroll();
+window.addEventListener('resize', updateDimensions);
+updateDimensions();
 
 // Linear Interpolation Helper
 function lerp(start, end, factor) {
@@ -32,7 +39,7 @@ function animate() {
     
     // Calculate skew based on velocity
     const diff = targetScroll - currentScroll;
-    const skew = diff * SKEW_STRENGTH;
+    const skew = diff * skewStrength;
     
     // Apply skew
     content.style.transform = `skewX(${skew}deg)`;
@@ -48,7 +55,7 @@ animate();
 // 1. Desktop Wheel (Vertical -> Horizontal)
 window.addEventListener("wheel", (evt) => {
     // Recalculate max in case of dynamic loading
-    updateMaxScroll();
+    updateDimensions();
 
     if (evt.deltaY !== 0) {
         evt.preventDefault();
@@ -63,7 +70,7 @@ let touchStartY = 0;
 
 window.addEventListener('touchstart', (e) => {
     touchStartY = e.touches[0].clientY;
-    updateMaxScroll();
+    updateDimensions();
 }, { passive: false });
 
 // Removed Snap Logic (auto-move caused lag feeling)
