@@ -528,8 +528,8 @@ body {
     margin-bottom: 0;
     aspect-ratio: 1/1;
     flex-shrink: 0;
-    min-width: 250px;
-    min-height: 250px;
+    min-width: 230px;
+    min-height: 230px;
   }
 
   .col p {
