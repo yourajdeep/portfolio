@@ -651,17 +651,17 @@ body {
   90% { transform: translate(-10%, 10%); }
 }
 
-/* Contact Link Styles */
+
 .about-container-contact-link a {
     position: relative;
     text-decoration: none;
-    color: #141412 !important; /* Force color match specifically */
+    color: #141412 !important; 
     cursor: pointer;
     display: inline-block;
-    /* Font settings inherited from .col p */
+    
 }
 
-/* Hover Line */
+
 .about-container-contact-link a::before {
     content: '';
     position: absolute;
@@ -677,7 +677,7 @@ body {
     width: 100%;
 }
 
-/* Hover Arrow */
+
 .about-container-contact-link a::after {
     content: '';
     display: inline-block;
