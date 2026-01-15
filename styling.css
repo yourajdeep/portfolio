@@ -587,12 +587,7 @@ body {
   }
 
   .col:nth-child(1) {
-    margin-top: 0;
-    margin-bottom: 0;
-    aspect-ratio: 1/1;
-    flex-shrink: 0;
-    min-width: 200px;
-    min-height: 200px;
+    display: none;
   }
 
   .col p {
@@ -605,7 +600,7 @@ body {
   }
 
   .container .info {
-    padding-top: 0;
+    padding-top: 20px;
   }
 }
 

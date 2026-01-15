@@ -1,58 +1,54 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let activeItemIndicator = CSSRulePlugin.getRule(".menu-item p");
   const toggleButton = document.querySelector(".burger");
   let isOpen = false;
 
-  gsap.set(".menu-item p", { y: 225 });
 
-  const timeline = gsap.timeline({ paused: true });
+  anime.set(".menu-item p", { translateY: 225 });
+  anime.set(".sub-nav", { bottom: "93%", opacity: 0 });
 
-  timeline.to(".overlay", {
-    duration: 1.35,
-    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-    ease: "power3.inOut",
+  const menuTimeline = anime.timeline({
+    autoplay: false
   });
 
-  timeline.to(
-    ".menu-item p",
-    {
-      duration: 1.35,
-      y: 0,
-      stagger: 0.2,
-      ease: "power3.out",
-    },
-    "-=1"
-  );
+  menuTimeline
+  .add({
+    targets: ".overlay",
+    duration: 1350,
+    clipPath: ["polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)", "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"],
+    easing: "easeInOutCubic"
+  })
+  .add({
+    targets: ".menu-item p",
+    translateY: [225, 0],
+    duration: 1350,
+    delay: anime.stagger(200),
+    easing: "easeOutCubic"
+  }, "-=1000")
+  .add({
+    targets: ".menu-item p",
+    width: ["0%", "100%"],
+    duration: 1000,
+    easing: "easeOutQuart",
+  }, "-=1350")
+  .add({
+    targets: ".sub-nav",
+    bottom: ["93%", "10%"],
+    opacity: [0, 1],
+    duration: 500,
+    easing: "easeOutCubic"
+  }, "-=500");
 
-  timeline.to(
-    activeItemIndicator,
-    {
-      width: "100%",
-      duration: 1,
-      ease: "power4.out",
-      delay: 0.5,
-    },
-    "<"
-  );
-
-  timeline.to(
-    ".sub-nav",
-    {
-      bottom: "10%",
-      opacity: 1,
-      duration: 0.5,
-      delay: 0.5,
-    },
-    "<"
-  );
-
-  toggleButton.addEventListener("click", function () {
-    if (isOpen) {
-      timeline.reverse();
-    } else {
-      timeline.timeScale(1).play();
-    }
-    isOpen = !isOpen;
+  toggleButton.addEventListener("click", function() {
+      if (isOpen) {
+           menuTimeline.reverse();
+           menuTimeline.play();
+           this.classList.remove('active');
+      } else {
+           if (menuTimeline.reversed) menuTimeline.reverse(); 
+           menuTimeline.play();
+           this.classList.add('active');
+      }
+      isOpen = !isOpen;
   });
 
   document.querySelectorAll(".overlay-menu a").forEach(link => {
@@ -63,12 +59,13 @@ document.addEventListener("DOMContentLoaded", function () {
       if (isOpen && target !== "#") {
         toggleButton.classList.remove("active");
         
-        timeline.timeScale(1.6).reverse();
+        menuTimeline.reverse();
+        menuTimeline.play();
         isOpen = false;
 
         setTimeout(() => {
           window.location.href = target;
-        }, ((timeline.duration() * 1000) / 1.6) - 300); 
+        }, menuTimeline.duration - 300); 
       } else {
         window.location.href = target;
       }
