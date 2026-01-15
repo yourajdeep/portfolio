@@ -485,7 +485,7 @@ body {
   will-change: transform;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1025px) {
 
 
   .logo a {
@@ -527,7 +527,7 @@ body {
   }
 }
 
-@media (min-width: 600px) and (max-width: 900px) {
+@media (min-width: 600px) and (max-width: 1025px) {
   .col p {
     font-size: 2.2rem;
     text-align: left;
@@ -605,7 +605,7 @@ body {
 
 
 
-@media (min-width: 901px) {
+@media (min-width: 1026px) {
   .container .info {
     flex-direction: row;
     justify-content: center;
