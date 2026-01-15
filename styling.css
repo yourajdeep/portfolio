@@ -498,6 +498,8 @@ body {
     line-height: 80%;
     will-change: transform;
     transition: letter-spacing 0.3s;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeSpeed;
   }
 
   .col p {

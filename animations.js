@@ -21,12 +21,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   requestAnimationFrame(() => {
+    const isMobile = window.innerWidth <= 900;
+    
     const timeline = gsap.timeline({ 
       paused: true
     });
 
     timeline.to(overlay, {
-      duration: 1.35,
+      duration: isMobile ? 1.1 : 1.35,
       clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
       ease: "power3.inOut",
     });
@@ -34,9 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
     timeline.to(
       menuItems,
       {
-        duration: 1.35,
+        duration: isMobile ? 1.0 : 1.35,
         y: 0,
-        stagger: 0.2,
+        stagger: isMobile ? 0.1 : 0.2,
         ease: "power3.out",
       },
       "-=1"
