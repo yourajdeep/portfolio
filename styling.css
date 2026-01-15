@@ -587,7 +587,7 @@ body {
   }
 
   .col:nth-child(1) {
-    margin-top: 1rem;
+    margin-top: 0;
     margin-bottom: 0;
     aspect-ratio: 1/1;
     flex-shrink: 0;
@@ -605,7 +605,7 @@ body {
   }
 
   .container .info {
-    padding-top: 20px;
+    padding-top: 0;
   }
 }
 
