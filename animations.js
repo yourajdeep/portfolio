@@ -77,13 +77,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const initialPhrases = [
     "Hi . নমস্কার . नमस्कार",
-    "Ola . Salut . Hola",
+    "Ciao . Salut . Hola",
     "こんにちわ . 안녕 . 你好"
   ];
 
   const greetingWords = [
     "Hi",
-    "Ola",
+    "Ciao",
     "Salut",
     "Hola",
     "নমস্কার",
