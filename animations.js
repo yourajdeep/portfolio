@@ -74,4 +74,75 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  const initialPhrases = [
+    "Hi . নমস্কার . नमस्कार",
+    "Ola . Salut . Hola",
+    "こんにちわ . 안녕 . 你好"
+  ];
+
+  const greetingWords = [
+    "Hi",
+    "Ola",
+    "Salut",
+    "Hola",
+    "নমস্কার",
+    "नमस्कार",
+    "こんにちわ",
+    "안녕",
+    "你好"
+  ];
+
+  const typewriterElement = document.getElementById("typewriter");
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typingSpeed = 90;
+  let isInitialPhase = true;
+  let currentPhrase = "";
+
+  function generateRandomPhrase() {
+    const shuffled = [...greetingWords].sort(() => Math.random() - 0.5);
+    return `${shuffled[0]} . ${shuffled[1]} . ${shuffled[2]}`;
+  }
+
+  function getNextPhrase() {
+    if (isInitialPhase && phraseIndex < initialPhrases.length) {
+      return initialPhrases[phraseIndex];
+    } else {
+      isInitialPhase = false;
+      return generateRandomPhrase();
+    }
+  }
+
+  function typeWriter() {
+    if (charIndex === 0 && !isDeleting) {
+      currentPhrase = getNextPhrase();
+    }
+    
+    if (isDeleting) {
+      typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+      charIndex--;
+      typingSpeed = 50;
+      
+      if (charIndex === 0) {
+        isDeleting = false;
+        phraseIndex++;
+        typingSpeed = 800;
+      }
+    } else {
+      typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+      charIndex++;
+      typingSpeed = 90;
+      
+      if (charIndex === currentPhrase.length) {
+        isDeleting = true;
+        typingSpeed = 3000;
+      }
+    }
+    
+    setTimeout(typeWriter, typingSpeed);
+  }
+
+  typeWriter();
 });
