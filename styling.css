@@ -186,9 +186,6 @@ nav {
   color: #cdc6be;
   mix-blend-mode: difference;
   z-index: 2;
-  will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
 }
 
 nav > div {
@@ -262,9 +259,7 @@ nav > div {
   display: flex;
   background: #141412;
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-  will-change: clip-path;
-  transform: translateZ(0);
-  backface-visibility: hidden;
+  will-change: transform;
   z-index: 1;
 }
 
@@ -284,8 +279,6 @@ nav > div {
   display: flex;
   cursor: pointer;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  transform: translateZ(0);
-  backface-visibility: hidden;
 }
 
 .menu-item p {
@@ -295,9 +288,7 @@ nav > div {
   font-size: 10vw;
   line-height: 80%;
   will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  transition: letter-spacing 0.3s ease;
+  transition: letter-spacing 0.3s;
 }
 
 .menu-item p:hover {
@@ -498,8 +489,6 @@ body {
     line-height: 80%;
     will-change: transform;
     transition: letter-spacing 0.3s;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeSpeed;
   }
 
   .col p {
