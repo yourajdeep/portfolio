@@ -529,7 +529,7 @@ body {
 
 @media (min-width: 600px) and (max-width: 900px) {
   .col p {
-    font-size: 2rem;
+    font-size: 2.2rem;
     text-align: left;
     width: 90%;
     margin: 0 auto;
@@ -590,7 +590,7 @@ body {
   }
 
   .col p {
-    font-size: 0.94rem;
+    font-size: 1.1rem;
   }
 
   .col:nth-child(2) {
@@ -658,7 +658,7 @@ body {
     color: #141412 !important; 
     cursor: pointer;
     display: inline-block;
-    
+    font-size: 1.2em;
 }
 
 
