@@ -603,6 +603,10 @@ body {
     align-items: center;
     text-align: left;
   }
+
+  .container .info {
+    padding-top: 20px;
+  }
 }
 
 
