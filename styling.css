@@ -365,7 +365,7 @@ nav > div {
 }
 
 #typewriter::after {
-  content: '|';
+  content: '_';
   animation: blink 1s infinite;
   margin-left: 2px;
 }
