@@ -144,5 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(typeWriter, typingSpeed);
   }
 
-  typeWriter();
+  if (typewriterElement) {
+    typeWriter();
+  }
 });
