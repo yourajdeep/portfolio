@@ -536,8 +536,7 @@ body {
   }
 
   .col:nth-child(1) {
-    width: 400px;
-    height: 400px;
+    display: none;
   }
 
   .logo a {
@@ -595,7 +594,7 @@ body {
   }
 
   .col:nth-child(2) {
-    align-items: center;
+    align-items: flex-start;
     text-align: left;
   }
 
@@ -650,4 +649,50 @@ body {
   70% { transform: translate(0%, 15%); }
   80% { transform: translate(3%, 25%); }
   90% { transform: translate(-10%, 10%); }
+}
+
+/* Contact Link Styles */
+.about-container-contact-link a {
+    position: relative;
+    text-decoration: none;
+    color: #141412 !important; /* Force color match specifically */
+    cursor: pointer;
+    display: inline-block;
+    /* Font settings inherited from .col p */
+}
+
+/* Hover Line */
+.about-container-contact-link a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #141412;
+    transition: width 0.3s ease-out;
+}
+
+.about-container-contact-link a:hover::before {
+    width: 100%;
+}
+
+/* Hover Arrow */
+.about-container-contact-link a::after {
+    content: '';
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em; 
+    background-image: url('images/arrow-up-right.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    opacity: 0;
+    transform: translateY(2px) translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.about-container-contact-link a:hover::after {
+    opacity: 1;
+    transform: translateY(2px) translateX(0);
 }
