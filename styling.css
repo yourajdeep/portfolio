@@ -312,6 +312,28 @@ nav > div {
   color: #cdc6be;
 }
 
+.sub-nav p a {
+  position: relative;
+  text-decoration: none;
+  color: #cdc6be;
+  display: inline-block;
+}
+
+.sub-nav p a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background-color: #cdc6be;
+  transition: width 0.3s ease-out;
+}
+
+.sub-nav p a:hover::before {
+  width: 100%;
+}
+
 .container {
   width: 100vw;
   height: 100%;
