@@ -3,9 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const toggleButton = document.querySelector(".burger");
   let isOpen = false;
 
-  gsap.set(".menu-item p", { y: 225 });
+  gsap.set(".menu-item p", { y: 225, force3D: true });
 
-  const timeline = gsap.timeline({ paused: true });
+  const timeline = gsap.timeline({ 
+    paused: true,
+    defaults: { force3D: true }
+  });
 
   timeline.to(".overlay", {
     duration: 1.35,
