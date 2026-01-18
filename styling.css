@@ -145,6 +145,22 @@ section {
   color: #141412;
   position: relative;
   cursor: pointer;
+  display: inline-block;
+}
+
+.distort h1 a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #141412;
+  transition: width 0.3s ease-out;
+}
+
+.distort h1 a:hover::before {
+  width: 100%;
 }
 
 .distort h1 a::after {
