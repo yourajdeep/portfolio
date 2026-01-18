@@ -718,3 +718,7 @@ body {
     opacity: 1;
     transform: translateY(2px) translateX(0);
 }
+
+.work-page .container::before {
+    position: fixed;
+}
